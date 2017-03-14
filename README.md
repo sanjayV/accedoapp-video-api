@@ -30,8 +30,11 @@ npm install -g bower
 #### dependency
 For BackEnd process we are using following API's
 `For Add History: https://accedo-video-app-api.herokuapp.com/addHistory`
+<br />
 `For Get History: https://accedo-video-app-api.herokuapp.com/getHistory/`
+<br />
 `For Add Watch Later: https://accedo-video-app-api.herokuapp.com/addlaterVideo`
+<br />
 `For Get Watch : https://accedo-video-app-api.herokuapp.com/laterVideo/`
 
 These API's created using Node Restify framework and hosted on separate heroku server.
