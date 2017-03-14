@@ -8,9 +8,8 @@ Accedo VOD API's use in [Accedo VOD app](https://github.com/sanjayV/accedoapp-vi
 Accedo VOD API's server provies following API's
 
 <br />
+#### For Add History
 ```
-For Add History
-
 URL: https://accedo-video-app-api.herokuapp.com/addHistory
 
 Method Type: Post
@@ -34,9 +33,8 @@ Post Data Example: {
 }
 ```
 
+#### For Get History
 ```
-For Get History
-
 URL: https://accedo-video-app-api.herokuapp.com/getHistory/
 
 Method Type: Get
@@ -44,9 +42,8 @@ Method Type: Get
 Get Data Example: https://accedo-video-app-api.herokuapp.com/getHistory/<userEmalId>
 ```
 
+#### For Add Video Watch Later
 ```
-For Add Video Watch Later
-
 URL: https://accedo-video-app-api.herokuapp.com/addlaterVideo
 
 Method Type: Post
@@ -70,9 +67,8 @@ Post Data Example: {
 }
 ```
 
+#### For Get Video Watch Later
 ```
-For Get Video Watch Later
-
 URL: https://accedo-video-app-api.herokuapp.com/laterVideo/
 
 Method Type: Get
