@@ -1,16 +1,88 @@
-# Accedo VOD
+# Accedo VOD API's
 
-Accedo VOD app, that use to display list of all latest videos. User can watch videos and their viewed videos history list.
+Accedo VOD API's use in [Accedo VOD app](https://github.com/sanjayV/accedoapp-video-fe) for add/get User Video view history and add/get Video watch later list.
 
 #### Live Demo
-[Accedo VOD](https://accedo-video-app-fe.herokuapp.com/#/)
+[Accedo VOD](https://accedo-video-app-api.herokuapp.com/)
 
-## Getting Started
+Accedo VOD API's server provies following API's
 
-To run this app on your local machine, get git clone or download as ZIP on local machine.
-See deployment for notes on how to deploy the project.
+<br />
+```
+For Add History
+<br/>
+URL: https://accedo-video-app-api.herokuapp.com/addHistory
+<br/>
+Method Type: Post
+<br />
+Post Data Type: JSON
+<br/>
+Post Data Example: {
+	"title" : "test",
+	"user_email": "skumarverma45@gmail.com",
+	"image_url": "http://lorempixel.com/214/317/?t=1",
+    "video_object": {
+        "url": "http://d2bqeap5aduv6p.cloudfront.net/project_coderush_640x360_521kbs_56min.mp4",
+        "format": "mp4",
+        "width": 640,
+        "height": 360,
+        "language": "en",
+        "duration": 3600000,
+        "geoLock": false,
+        "id": "vid_103"
+    }
+}
+```
 
-### Prerequisites and dependency
+```
+For Get History
+<br/>
+URL: https://accedo-video-app-api.herokuapp.com/getHistory/
+<br/>
+Method Type: Get
+<br/>
+Get Data Example: https://accedo-video-app-api.herokuapp.com/getHistory/<userEmalId>
+```
+
+```
+For Add Video Watch Later
+<br/>
+URL: https://accedo-video-app-api.herokuapp.com/addlaterVideo
+<br/>
+Method Type: Post
+<br />
+Post Data Type: JSON
+<br/>
+Post Data Example: {
+	"title" : "test",
+	"user_email": "skumarverma45@gmail.com",
+	"image_url": "http://lorempixel.com/214/317/?t=1",
+    "video_object": {
+        "url": "http://d2bqeap5aduv6p.cloudfront.net/project_coderush_640x360_521kbs_56min.mp4",
+        "format": "mp4",
+        "width": 640,
+        "height": 360,
+        "language": "en",
+        "duration": 3600000,
+        "geoLock": false,
+        "id": "vid_103"
+    }
+}
+```
+
+```
+For Get Video Watch Later
+<br/>
+URL: https://accedo-video-app-api.herokuapp.com/laterVideo/
+<br/>
+Method Type: Get
+<br/>
+Get Data Example: https://accedo-video-app-api.herokuapp.com/laterVideo/<userEmalId>
+```
+
+### Prerequisites and dependency for local setup
+
+If you want install these Api's server on local machine then need to add following dependencies
 
 #### Prerequisites
 You need to install latest NPM and Node on local machine if not install 
@@ -27,50 +99,31 @@ npm install -g grunt-cli
 npm install -g bower
 ```
 
-#### dependency
-For BackEnd process we are using following API's
-<br />
-`For Add History: https://accedo-video-app-api.herokuapp.com/addHistory`
-<br />
-`For Get History: https://accedo-video-app-api.herokuapp.com/getHistory/`
-<br />
-`For Add Watch Later: https://accedo-video-app-api.herokuapp.com/addlaterVideo`
-<br />
-`For Get Watch : https://accedo-video-app-api.herokuapp.com/laterVideo/`
+#### Dependency
 
-These API's created using Node Restify framework and hosted on separate heroku server.
-For get more information about these API's visit following link.
-[Accedo VOD API](https://github.com/sanjayV/accedoapp-video-api)
+I am using MongoDB for store Data so MongoDB should be installed on local machine.
+You can find about how to install MongoDB by following link
+[Install MongoDB](https://docs.mongodb.com/manual/installation/)
 
-For Frontend Carousel, I am using my own [Responsive Carousel](https://github.com/sanjayV/responsive_carousel).
-This Carousel will display images in carousel according screen size.
+After install MongoDB, open local connection on MongoDB and create DB with name `accedo` on Post '27017'.
 
-### Installing
+If your local DB name or Connection url different then update it in Accedo API app/config/config.js for `local` environment.
 
-To Run project you need to run following command fist
+### Run
 
-Move to Accedo app project folder using command prompt and run following command for install Grunt and Bower packages 
+To Run project you need to get git clonse of project OR download ZIP format of project.
+
+Move to Accedo API project folder using command prompt and run following command for install Grunt and Bower packages 
 ```
 npm install
-bower install
 ```
-These command will install all dependencies of project in two folder `node_modules` and `bower_components`.
+These command will install all dependencies of project in two folder `node_modules`
+
+I am using Restify framework for create API's so [Node Restify](https://www.npmjs.com/package/restify) module will also install as dependency
 
 After install all dependencies, need to build projects by following command
 
 ```
-grunt build
+node index.js
 ```
-This build process will check all dependencies, Minify all js, css and html files
-Copy all minify files, images, fonts in dist folder.
-
-## Running app
-
-To run app on local machine, move to Accedo app project folder using command prompt and run following grunt common 
-
-```
-grunt serve
-```
-
-It will check all dependencies and run project on default browser.
-Default post is set `9000` so project will run on url `http://localhost:9000`
+This command will run Accedo Node API server. 
