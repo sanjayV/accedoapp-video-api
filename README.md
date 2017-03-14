@@ -10,13 +10,13 @@ Accedo VOD API's server provies following API's
 <br />
 ```
 For Add History
-<br/>
+
 URL: https://accedo-video-app-api.herokuapp.com/addHistory
-<br/>
+
 Method Type: Post
-<br />
+
 Post Data Type: JSON
-<br/>
+
 Post Data Example: {
 	"title" : "test",
 	"user_email": "skumarverma45@gmail.com",
@@ -36,23 +36,23 @@ Post Data Example: {
 
 ```
 For Get History
-<br/>
+
 URL: https://accedo-video-app-api.herokuapp.com/getHistory/
-<br/>
+
 Method Type: Get
-<br/>
+
 Get Data Example: https://accedo-video-app-api.herokuapp.com/getHistory/<userEmalId>
 ```
 
 ```
 For Add Video Watch Later
-<br/>
+
 URL: https://accedo-video-app-api.herokuapp.com/addlaterVideo
-<br/>
+
 Method Type: Post
-<br />
+
 Post Data Type: JSON
-<br/>
+
 Post Data Example: {
 	"title" : "test",
 	"user_email": "skumarverma45@gmail.com",
@@ -72,11 +72,11 @@ Post Data Example: {
 
 ```
 For Get Video Watch Later
-<br/>
+
 URL: https://accedo-video-app-api.herokuapp.com/laterVideo/
-<br/>
+
 Method Type: Get
-<br/>
+
 Get Data Example: https://accedo-video-app-api.herokuapp.com/laterVideo/<userEmalId>
 ```
 
