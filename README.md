@@ -3,12 +3,12 @@
 Accedo VOD API's use in [Accedo VOD app](https://github.com/sanjayV/accedoapp-video-fe) for add/get User Video view history and add/get Video watch later list.
 
 #### Live Demo
-[Accedo VOD](https://accedo-video-app-api.herokuapp.com/)
+[Accedo VOD API](https://accedo-video-app-api.herokuapp.com/)
 
 Accedo VOD API's server provies following API's
 
-<br />
 #### For Add History
+
 ```
 URL: https://accedo-video-app-api.herokuapp.com/addHistory
 
@@ -34,6 +34,7 @@ Post Data Example: {
 ```
 
 #### For Get History
+
 ```
 URL: https://accedo-video-app-api.herokuapp.com/getHistory/
 
