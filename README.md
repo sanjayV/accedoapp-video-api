@@ -20,7 +20,7 @@ Post Data Example: {
 	"title" : "test",
 	"user_email": "skumarverma45@gmail.com",
 	"image_url": "http://lorempixel.com/214/317/?t=1",
-    "video_object": {
+  "video_object": {
         "url": "http://d2bqeap5aduv6p.cloudfront.net/project_coderush_640x360_521kbs_56min.mp4",
         "format": "mp4",
         "width": 640,
@@ -55,7 +55,7 @@ Post Data Example: {
 	"title" : "test",
 	"user_email": "skumarverma45@gmail.com",
 	"image_url": "http://lorempixel.com/214/317/?t=1",
-    "video_object": {
+  "video_object": {
         "url": "http://d2bqeap5aduv6p.cloudfront.net/project_coderush_640x360_521kbs_56min.mp4",
         "format": "mp4",
         "width": 640,
