@@ -1,10 +1,9 @@
 /*jslint node: true, indent: 2 */
 'use strict';
-var restify, bunyan, routes, log, server, mongoose, config, db, env, allowCrossDomain;
+var restify, routes, log, server, mongoose, config, db, env, allowCrossDomain;
 
 mongoose = require("mongoose");
 restify = require('restify');
-bunyan = require('bunyan');
 routes = require('./routes/');
 config = require('./config/config');
 env = process.env.NODE_ENV || 'local';
@@ -16,13 +15,6 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', function callback() {
     console.log("Database connection opened.");
-});
-
-log = bunyan.createLogger({
-    name: 'accedoapi',
-    level: process.env.LOG_LEVEL || 'info',
-    stream: process.stdout,
-    serializers: bunyan.stdSerializers
 });
 
 allowCrossDomain = function(req, res, next) {
@@ -63,9 +55,9 @@ server = restify.createServer({
 });
 
 server.use(allowCrossDomain);
-server.use(restify.bodyParser({ mapParams: true }));
-server.use(restify.queryParser());
-server.use(restify.gzipResponse());
+server.use(restify.plugins.bodyParser({ mapParams: true }));
+server.use(restify.plugins.queryParser());
+server.use(restify.plugins.gzipResponse());
 server.pre(restify.pre.sanitizePath());
 
 /*jslint unparam:true*/
@@ -84,7 +76,6 @@ server.on('uncaughtException', function(req, res, route, err) {
 });
 /*jslint unparam:false*/
 
-server.on('after', restify.auditLogger({ log: log }));
 routes(server);
 server.listen(config[env].port, function() {
     console.log('%s listening at %s', server.name, server.url);
